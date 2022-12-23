@@ -1,0 +1,492 @@
+@charset "utf-8";
+/* CSS Document */
+/* ### reset css*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0px;
+  margin: 0px;
+}
+ul {
+  list-style-type: none;
+}
+/*### clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+.clearfix {
+  min-height: 1px;
+  position: relative;
+}
+* html .clearfix {
+  height: 1px;
+}
+
+/* ### default tag */
+body,
+html {
+  height: 100%;
+}
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka,
+    "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background-color: #ffffff;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #333;
+  font-weight: normal;
+}
+a {
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+}
+.wrapcontent {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+body .wrapcontent .content,
+footer {
+  margin-top: 70px;
+}
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1em;
+  font-feature-settings: "pkna" 1;
+}
+.hd-sm-3 {
+  display: none;
+}
+.closeico {
+  display: none;
+}
+
+/*ロゴ*/
+.title {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  font-feature-settings: "palt";
+}
+.title .content1 {
+  font-size: 2.5em;
+}
+.title .content2 {
+  font-size: 2em;
+}
+
+/* ### header */
+header {
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  height: 80px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  white-space: nowrap;
+}
+header h1 {
+  margin-left: 10px;
+}
+header a {
+  text-decoration: none;
+  color: white;
+}
+header .wrapcontent {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  padding-bottom: 10px;
+}
+header .wrapcontent .hd-sm-2 {
+  margin-left: auto;
+  text-align: right;
+}
+/* nav */
+header .wrapcontent .hd-sm-2 nav li {
+  text-align: right;
+  display: inline-block;
+  margin-left: 2em;
+}
+/* button*/
+.menubtn {
+  display: none;
+}
+
+/* ### heroimage */
+#heroimage {
+  background-image: url("../images/landscape_photography/DSC_0084.jpg");
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+#heroimage ul {
+  display: none;
+}
+#heroimage p {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0px 10px;
+  margin: 10px 0px;
+  color: #fff;
+  bottom: 0px;
+}
+#heroimage h2 {
+  font-size: 2.5em;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 70px;
+  padding: 10px 20px 10px 20px;
+}
+@media screen and (max-width: 767px) {
+  #heroimage ul {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    flex-direction: column;
+  }
+  #heroimage ul li {
+    width: calc(100% - 60px);
+    margin: 30px auto 0 auto;
+  }
+  #heroimage ul li a {
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 32.5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: block;
+  }
+  #heroimage ul li a:hover {
+    transition: 0.3s all;
+    color: #333;
+    background-color: #fff;
+    opacity: 1;
+  }
+  /* ハンバーガーメニュー*/
+  header .wrapcontent .hd-sm-2 {
+    display: none;
+  }
+  header .wrapcontent .menubtn {
+    display: inline;
+    margin: auto 10px 0 auto;
+  }
+  header .wrapcontent .menubtn:hover {
+    opacity: 0.6;
+  }
+  header .wrapcontent .menubtn .menuico::after {
+    font-size: 2.5rem;
+    font-family: "Material Icons";
+    content: "\e5d2";
+    position: absolute;
+    bottom: 3px;
+    right: 18px;
+  }
+  header .wrapcontent .menubtn .closeico::after {
+    font-size: 2.5rem;
+    font-family: "Material Icons";
+    content: "\e5cd";
+    position: absolute;
+    bottom: 3px;
+    right: 18px;
+  }
+  .hd-sm-3 {
+    width: 100%;
+    height: 480px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    position: relative;
+  }
+}
+
+/* ### content */
+body .content h2 {
+  border-left: 11px solid #ff7600;
+  padding-left: 9px;
+}
+body .content .body-of-letter {
+  margin-top: 30px;
+  padding: 0 25px 0 25px;
+}
+body .content img {
+  max-width: 717px;
+  margin: 0px;
+}
+@media screen and (max-width: 767px) {
+  body .content img {
+    max-width: 100%;
+  }
+}
+.nowrap {
+  white-space: nowrap;
+}
+.article time {
+  display: block;
+  margin: 0px 0px 20px 0px;
+}
+
+/*table-dl*/
+.table-dl {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+.table-dl dt {
+  background: #f5f5f5;
+  padding: 5px;
+  width: 150px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.table-dl dd {
+  background: #fff;
+  padding: 5px;
+  width: calc(100% - 150px);
+  border-bottom: 1px solid #ccc;
+}
+
+/*date-dl*/
+.date-dl dt {
+  float: left;
+  clear: left;
+  margin-right: 10px;
+}
+.date-dl dd {
+  margin-left: 0px;
+}
+.date-dl dd a {
+  text-decoration: none;
+}
+@media screen and (max-width: 767px) {
+  .date-dl dt {
+    float: none;
+  }
+}
+
+/* top*/
+#page_top {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0.6;
+  z-index: 10;
+}
+#page_top a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  background: rgb(255, 119, 0);
+}
+#page_top a::after {
+  font-family: "Material Icons";
+  content: "\e316";
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+/* ### footer */
+footer {
+  background-color: #333333;
+  color: white;
+  white-space: nowrap;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer .wrapcontent {
+  min-height: 230px;
+  padding-top: 45px;
+}
+footer .wrapcontent .wrapcol {
+  width: auto;
+  height: auto;
+  display: flex;
+}
+footer .wrapcontent .wrapcol .col-sm-2 {
+  margin-right: auto;
+  display: flex;
+}
+footer .wrapcontent .wrapcol .col-sm-2 ul {
+  margin-left: 80px;
+}
+footer #copyright {
+  text-align: center;
+  background-color: black;
+  height: 45px;
+}
+footer #copyright .wrapcopy {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+footer #copyright .wrapcopy small {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media screen and (max-width: 767px) {
+  footer .wrapcontent {
+    text-align: center;
+  }
+  footer .wrapcontent .wrapcol {
+    width: auto;
+    height: auto;
+    display: block;
+  }
+  footer .wrapcontent .wrapcol .col-sm-2 {
+    display: block;
+  }
+  footer #copyright,
+  footer .wrapcontent .wrapcol .col-sm-2 ul {
+    margin: 30px 0 0 0;
+  }
+}
+
+/*### リッチリンク*/
+
+/* カード全体像 */
+.blogcard {
+  max-width: 614px;
+  margin: 0px 0px 30px 0px;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid rgb(211, 211, 211);
+  box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.1);
+  background: white;
+  color: rgb(51, 51, 51);
+}
+
+/* float親要素 */
+.blogcard-content {
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+/* 画像 */
+.blogcard-image {
+  display: inline-block;
+  float: right; /* 画像を左に配置したい場合は left に変更 1/2 */
+  width: 100px; /* 画像の表示サイズ変更は数値をpxで変更 1/6 */
+  height: 100px; /* 画像の表示サイズ変更は数値をpxで変更 2/6 */
+  margin: 0 0 5px 5px; /* 画像を左に配置したい場合は 0 10px 5px 0 に変更 2/2 */
+}
+
+.blogcard-image-wrapper {
+  display: inline-block;
+  width: 100px; /* 画像の表示サイズ変更は数値をpxで変更 3/6 */
+  height: 100px; /* 画像の表示サイズ変更は数値をpxで変更 4/6 */
+}
+
+.blogcard-image-wrapper img {
+  width: 100px; /* 画像の表示サイズ変更は数値をpxで変更 5/6 */
+  height: 100px; /* 画像の表示サイズ変更は数値をpxで変更 6/6 */
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* タイトル */
+.blogcard-title {
+  margin: 0 !important;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.blogcard-title a {
+  color: rgb(61, 63, 68);
+  word-break: break-all;
+}
+
+.blogcard-title a:hover {
+  text-decoration: underline;
+}
+
+/* 引用 */
+.blogcard blockquote {
+  position: static;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  border: 0;
+  background: transparent; /* ブログテンプレートに背景に関する強制力の強い指定がある場合には transparent の直後に !important を付けてください */
+}
+
+.blogcard blockquote::before,
+.blogcard blockquote::after {
+  content: none;
+}
+
+/* 記事概要 */
+.blogcard-description {
+  margin: 1em 0 !important;
+  font-size: 13px;
+  line-height: 1.5 !important;
+}
+
+/* フッター(元記事サイト名とリンク) */
+.blogcard-footer {
+  font-size: 12px;
+}
+
+.blogcard-footer a {
+  color: rgb(154, 165, 171);
+  text-decoration: underline;
+}
