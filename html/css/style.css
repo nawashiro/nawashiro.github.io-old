@@ -8,6 +8,7 @@
   --crystal-clear-black: rgba(0, 0, 0, 0.6);
   --strong-crystal-clear-black: rgba(0, 0, 0, 0.7);
   --element-width-in-content: 717px;
+  --max-widh-of-element: 1200px;
 }
 
 /* ### reset css*/
@@ -74,7 +75,7 @@ a:hover {
   opacity: 0.6;
 }
 .wrapcontent {
-  max-width: 1200px;
+  max-width: var(--max-widh-of-element);
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
@@ -185,7 +186,7 @@ header .wrapcontent .hd-sm-2 nav li {
     position: absolute;
     bottom: 50px;
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--max-widh-of-element);
     margin-left: auto;
     margin-right: auto;
     list-style: none;
