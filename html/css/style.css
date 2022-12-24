@@ -4,6 +4,9 @@
 /* 各種変数　*/
 :root {
   --highright-color: #ff7600;
+  --black-color: #333;
+  --crystal-clear-black: rgba(0, 0, 0, 0.6);
+  --strong-crystal-clear-black: rgba(0, 0, 0, 0.7);
 }
 
 /* ### reset css*/
@@ -56,10 +59,10 @@ body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
     "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka,
     "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background-color: #ffffff;
+  background-color: white;
   line-height: 1.8;
   font-size: 16px;
-  color: #333;
+  color: var(--black-color);
   font-weight: normal;
 }
 a {
@@ -110,7 +113,7 @@ h2 {
 /* ### header */
 header {
   line-height: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   color: white;
   height: 80px;
   width: 100%;
@@ -160,7 +163,7 @@ header .wrapcontent .hd-sm-2 nav li {
 }
 #heroimage p {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   padding: 0px 10px;
   margin: 10px 0px;
   color: #fff;
@@ -169,7 +172,7 @@ header .wrapcontent .hd-sm-2 nav li {
 #heroimage h2 {
   font-size: 2.5em;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   position: absolute;
   bottom: 70px;
   padding: 10px 20px 10px 20px;
@@ -201,12 +204,12 @@ header .wrapcontent .hd-sm-2 nav li {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--strong-crystal-clear-black);
     display: block;
   }
   #heroimage ul li a:hover {
     transition: 0.3s all;
-    color: #333;
+    color: var(--black-color);
     background-color: #fff;
     opacity: 1;
   }
@@ -240,7 +243,7 @@ header .wrapcontent .hd-sm-2 nav li {
   .hd-sm-3 {
     width: 100%;
     height: 480px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--strong-crystal-clear-black);
     z-index: 5;
     position: relative;
   }
@@ -332,7 +335,7 @@ body .content img {
   width: 50px;
   height: 50px;
   text-decoration: none;
-  background: rgb(255, 119, 0);
+  background: var(--highright-color);
 }
 #page_top a::after {
   font-family: "Material Icons";
@@ -350,7 +353,7 @@ body .content img {
 
 /* ### footer */
 footer {
-  background-color: #333333;
+  background-color: var(--black-color);
   color: white;
   white-space: nowrap;
 }
