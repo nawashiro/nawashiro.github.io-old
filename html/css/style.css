@@ -1,5 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
+
+/* 各種変数　*/
+:root {
+  --highright-color: #ff7600;
+}
+
 /* ### reset css*/
 *,
 *::before,
@@ -242,7 +248,7 @@ header .wrapcontent .hd-sm-2 nav li {
 
 /* ### content */
 body .content h2 {
-  border-left: 11px solid #ff7600;
+  border-left: 11px solid var(--highright-color);
   padding-left: 9px;
 }
 body .content .body-of-letter {
