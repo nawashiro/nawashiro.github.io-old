@@ -1,5 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
+
+/* 各種変数　*/
+:root {
+  --highright-color: #ff7600;
+  --black-color: #333;
+  --crystal-clear-black: rgba(0, 0, 0, 0.6);
+  --strong-crystal-clear-black: rgba(0, 0, 0, 0.7);
+  --element-width-in-content: 717px;
+  --max-widh-of-element: 1200px;
+}
+
 /* ### reset css*/
 *,
 *::before,
@@ -50,10 +61,10 @@ body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
     "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka,
     "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background-color: #ffffff;
+  background-color: white;
   line-height: 1.8;
   font-size: 16px;
-  color: #333;
+  color: var(--black-color);
   font-weight: normal;
 }
 a {
@@ -64,7 +75,7 @@ a:hover {
   opacity: 0.6;
 }
 .wrapcontent {
-  max-width: 1200px;
+  max-width: var(--max-widh-of-element);
   margin-left: auto;
   margin-right: auto;
   padding-left: 10px;
@@ -104,7 +115,7 @@ h2 {
 /* ### header */
 header {
   line-height: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   color: white;
   height: 80px;
   width: 100%;
@@ -154,7 +165,7 @@ header .wrapcontent .hd-sm-2 nav li {
 }
 #heroimage p {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   padding: 0px 10px;
   margin: 10px 0px;
   color: #fff;
@@ -163,7 +174,7 @@ header .wrapcontent .hd-sm-2 nav li {
 #heroimage h2 {
   font-size: 2.5em;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--crystal-clear-black);
   position: absolute;
   bottom: 70px;
   padding: 10px 20px 10px 20px;
@@ -175,7 +186,7 @@ header .wrapcontent .hd-sm-2 nav li {
     position: absolute;
     bottom: 50px;
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--max-widh-of-element);
     margin-left: auto;
     margin-right: auto;
     list-style: none;
@@ -195,12 +206,12 @@ header .wrapcontent .hd-sm-2 nav li {
     padding-top: 15px;
     padding-bottom: 15px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--strong-crystal-clear-black);
     display: block;
   }
   #heroimage ul li a:hover {
     transition: 0.3s all;
-    color: #333;
+    color: var(--black-color);
     background-color: #fff;
     opacity: 1;
   }
@@ -234,7 +245,7 @@ header .wrapcontent .hd-sm-2 nav li {
   .hd-sm-3 {
     width: 100%;
     height: 480px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--strong-crystal-clear-black);
     z-index: 5;
     position: relative;
   }
@@ -242,7 +253,7 @@ header .wrapcontent .hd-sm-2 nav li {
 
 /* ### content */
 body .content h2 {
-  border-left: 11px solid #ff7600;
+  border-left: 11px solid var(--highright-color);
   padding-left: 9px;
 }
 body .content .body-of-letter {
@@ -250,10 +261,10 @@ body .content .body-of-letter {
   padding: 0 25px 0 25px;
 }
 body .content img {
-  max-width: 717px;
-  margin: 0px;
+  max-width: var(--element-width-in-content);
+  margin: 0px 0px 30px 0px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 787px) {
   body .content img {
     max-width: 100%;
   }
@@ -326,7 +337,7 @@ body .content img {
   width: 50px;
   height: 50px;
   text-decoration: none;
-  background: rgb(255, 119, 0);
+  background: var(--highright-color);
 }
 #page_top a::after {
   font-family: "Material Icons";
@@ -344,7 +355,7 @@ body .content img {
 
 /* ### footer */
 footer {
-  background-color: #333333;
+  background-color: var(--black-color);
   color: white;
   white-space: nowrap;
 }
@@ -404,7 +415,7 @@ footer #copyright .wrapcopy small {
 
 /* カード全体像 */
 .blogcard {
-  max-width: 614px;
+  max-width: var(--element-width-in-content);
   margin: 0px 0px 30px 0px;
   padding: 10px;
   border-radius: 2px;
@@ -427,6 +438,10 @@ footer #copyright .wrapcopy small {
   width: 100px; /* 画像の表示サイズ変更は数値をpxで変更 1/6 */
   height: 100px; /* 画像の表示サイズ変更は数値をpxで変更 2/6 */
   margin: 0 0 5px 5px; /* 画像を左に配置したい場合は 0 10px 5px 0 に変更 2/2 */
+}
+
+.blogcard a {
+  text-decoration: none;
 }
 
 .blogcard-image-wrapper {
