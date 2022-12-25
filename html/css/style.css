@@ -442,6 +442,7 @@ footer #copyright .wrapcopy small {
 
 .blogcard a {
   text-decoration: none;
+  color: var(--black-color);
 }
 
 .blogcard-image-wrapper {
