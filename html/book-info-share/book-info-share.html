@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=4,user-scalable=yes"
+    />
+    <!--JQuery-->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- quaggaJSの読み込み -->
+    <script src="./js/quagga.min.js"></script>
+    <!--リーダーの読み込み-->
+    <script src="./js/reader.js"></script>
+    <!--書籍情報の読み込み-->
+    <script src="./js/get-book-info.js"></script>
+
+    <style>
+      #hiddenContent {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Book info share</h1>
+    <p>
+      書籍の情報を簡単に共有するためのアプリです。バーコードをスキャンしてください。
+    </p>
+    <div><canvas id="preview"></canvas></div>
+    <label>ISBN</label>
+    <input
+      type="text"
+      id="isbn"
+      inputmode="numeric"
+      pattern="\d*"
+      maxlength="13"
+    />
+    <input type="button" onclick="get_book_info()" value="検索" />
+
+    <div id="hiddenContent">
+      <h2 id="title"></h2>
+      <p id="authors"></p>
+      <p id="publisher"></p>
+      <p><img id="bookPicture" src="#" /></p>
+      <p><a id="source">Google Books のページ</a></p>
+      <p>もしかして：<span id="ndc"></span></p>
+      <p>
+        <label>NDCをタグとして含める</label
+        ><input id="ndcCheck" type="checkbox" />
+      </p>
+
+      <input type="button" onclick="tweet()" value="ツイートする" />
+    </div>
+
+    <footer>
+      <p>
+        使用API: Google Books API, NDC Predictor(<a
+          href="https://lab.ndl.go.jp/service/ndc_predictor/"
+          >国立国会図書館ウェブサイト</a
+        >)
+      </p>
+    </footer>
+  </body>
+</html>
