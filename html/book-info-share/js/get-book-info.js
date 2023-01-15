@@ -53,13 +53,11 @@ var get_book_info = async (query) => {
   authorsElement = document.getElementById("authors");
   publisherElement = document.getElementById("publisher");
   bookPicture = document.getElementById("bookPicture");
-  sourceElement = document.getElementById("source");
 
   titleElement.textContent = title;
   authorsElement.textContent = authorText;
   publisherElement.textContent = publisher;
   bookPicture.src = imageLinks;
-  sourceElement.href = infoLink;
 
   //NDC推測APIのリクエスト
   var ndcQueryText = "";
@@ -81,14 +79,15 @@ var get_book_info = async (query) => {
   var ndcNumber = ndcData[0]["value"];
   var ndcLabel = ndcData[0]["label"];
 
-  ndcLabelText = ndcLabel.replace(/--/g, "．");
+  ndcLabelText = ndcLabel.replace(/--/g, ",");
+  ndcLabelText = ndcLabelText.replace(/・/g, ",");
   ndcLabelText = ndcLabelText.replace(/．/g, ",");
 
   var ndcElement = document.getElementById("ndc");
   ndcElement.textContent = `NDC ${ndcNumber}/${ndcLabel}`;
 
   var encodedText = encodeURI(
-    `${title}${authorText} ${publisher}\n${infoLink}`
+    `${title}${authorText} ${publisher}を読みました\n${infoLink}`
   );
 
   tweetText = `https://twitter.com/intent/tweet?text=${encodedText}`;
