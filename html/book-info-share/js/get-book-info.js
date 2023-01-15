@@ -4,6 +4,10 @@ var tweetText;
 var get_book_info = async (query) => {
   isbn = document.getElementById("isbn");
 
+  if (isbn.value == "") {
+    return;
+  }
+
   // Google Books APIs のエンドポイント
   var endpoint = "https://www.googleapis.com/books/v1";
 
@@ -14,7 +18,7 @@ var get_book_info = async (query) => {
 
   if (bookData["totalItems"] == 0) {
     alert("見つかりませんでした。");
-    return 0;
+    return;
   }
 
   console.log(bookData);

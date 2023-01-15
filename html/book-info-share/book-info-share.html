@@ -6,6 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=4,user-scalable=yes"
     />
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+
     <!--JQuery-->
     <script src="./js/jquery-3.6.0.min.js"></script>
     <!-- quaggaJSの読み込み -->
@@ -19,46 +21,110 @@
       #hiddenContent {
         visibility: hidden;
       }
+
+      .wrapcontent {
+        padding-bottom: 70px;
+      }
+
+      .tweetButton {
+        background-color: #52a9fb;
+        border: none;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 7px;
+      }
+
+      a {
+        text-decoration: none;
+      }
     </style>
   </head>
 
   <body>
-    <h1>Book info share</h1>
-    <p>
-      書籍の情報を簡単に共有するためのアプリです。バーコードをスキャンしてください。
-    </p>
-    <div><canvas id="preview"></canvas></div>
-    <label>ISBN</label>
-    <input
-      type="text"
-      id="isbn"
-      inputmode="numeric"
-      pattern="\d*"
-      maxlength="13"
-    />
-    <input type="button" onclick="get_book_info()" value="検索" />
+    <div class="wrapcontent">
+      <h1>Book info share</h1>
 
-    <div id="hiddenContent">
-      <h2 id="title"></h2>
-      <p id="authors"></p>
-      <p id="publisher"></p>
-      <p><img id="bookPicture" src="#" /></p>
-      <p>もしかして：<span id="ndc"></span></p>
-      <p>
-        <label>NDCをタグとして含める</label
-        ><input id="ndcCheck" type="checkbox" />
-      </p>
+      <div class="content">
+        <h2>概要</h2>
+        <div class="body-of-letter">
+          <p>
+            書籍の情報を簡単に共有するためのアプリです。バーコードをスキャンしてください。
+          </p>
+        </div>
+        <!--body-of-letter-->
+      </div>
+      <!-- content -->
 
-      <input type="button" onclick="tweet()" value="ツイートする" />
+      <div class="content">
+        <h2>スキャン</h2>
+        <div class="body-of-letter">
+          <div><canvas id="preview"></canvas></div>
+          <label>ISBN</label>
+          <input
+            type="text"
+            id="isbn"
+            inputmode="numeric"
+            pattern="\d*"
+            maxlength="13"
+          />
+          <input type="button" onclick="get_book_info()" value="検索" />
+        </div>
+        <!--body-of-letter-->
+      </div>
+      <!-- content -->
+
+      <div class="content">
+        <h2>結果</h2>
+        <div id="hiddenContent">
+          <div class="body-of-letter">
+            <h3><span id="title"></span></h3>
+            <p><span id="authors"></span></p>
+            <p><span id="publisher"></span></p>
+            <p><img id="bookPicture" src="#" /></p>
+            <p>もしかして：<span id="ndc"></span></p>
+            <p>
+              <label>NDCをタグとして含める</label
+              ><input id="ndcCheck" type="checkbox" />
+            </p>
+
+            <input
+              class="tweetButton"
+              type="button"
+              onclick="tweet()"
+              value="ツイートする"
+            />
+          </div>
+          <!--body-of-letter-->
+        </div>
+        <!--hiddenContent-->
+      </div>
+      <!-- content -->
+
+      <div class="content">
+        <h2>使用API</h2>
+        <div class="body-of-letter">
+          <ul>
+            <li>Google Books API</li>
+            <li>
+              NDC Predictor(
+              <a href="https://lab.ndl.go.jp/service/ndc_predictor/"
+                >国立国会図書館ウェブサイト </a
+              >)
+            </li>
+          </ul>
+        </div>
+        <!--body-of-letter-->
+      </div>
+      <!-- content -->
+
+      <div class="content">
+        <a href="../">トップページへ</a>
+      </div>
+      <!-- content -->
     </div>
-
-    <footer>
-      <p>
-        使用API: Google Books API, NDC Predictor(<a
-          href="https://lab.ndl.go.jp/service/ndc_predictor/"
-          >国立国会図書館ウェブサイト</a
-        >)
-      </p>
-    </footer>
+    <!--/wrapcontent-->
   </body>
 </html>
