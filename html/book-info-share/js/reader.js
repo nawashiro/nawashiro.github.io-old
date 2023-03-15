@@ -89,18 +89,32 @@ window.addEventListener("load", function (event) {
   }
 
   Quagga.onDetected(function (result) {
-    //読み取り誤差が多いため、3回連続で同じ値だった場合に成功とする
-    if (DetectedCode == result.codeResult.code) {
-      DetectedCount++;
-    } else {
-      DetectedCount = 0;
-      DetectedCode = result.codeResult.code;
+    const detectedCode = result.codeResult.code;
+
+    if (detectedCode.length != 13) {
+      //桁があっているか確認する
+      console.log("Barcode error: length " + detectedCode);
+      return;
     }
-    if (DetectedCount >= 3) {
-      console.log(result.codeResult.code);
-      isbn.value = result.codeResult.code;
-      DetectedCode = "";
-      DetectedCount = 0;
+
+    const checkDigit = parseInt(detectedCode.slice(-1)); // バーコードからチェックデジットを抽出する
+    const barcodeDigits = detectedCode.slice(0, -1).split(""); // チェックデジットを除いたバーコードの桁を抽出する
+
+    let sum = 0;
+    for (let i = 0; i < barcodeDigits.length; i++) {
+      if (i % 2 === 0) {
+        sum += parseInt(barcodeDigits[i]); // 奇数桁
+      } else {
+        sum += 3 * parseInt(barcodeDigits[i]); // 偶数桁を3倍する
+      }
+    }
+
+    if ((sum + checkDigit) % 10 === 0) {
+      // バーコードが正しいか確認する
+      console.log(detectedCode);
+      isbn.value = detectedCode;
+    } else {
+      console.log("Barcode error: " + detectedCode);
     }
   });
 });
